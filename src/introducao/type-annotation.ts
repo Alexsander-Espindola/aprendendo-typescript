@@ -8,15 +8,16 @@ const otherArrayOfnumbers: number[] = [4, 5, 6, 7];
 console.log(arrayOfNumbers, otherArrayOfnumbers);
 
 // Objetos
-const car: {
-  color: string;
-  year: number;
-  optional?: boolean;
-} = {
-  color: 'Blue',
+const car = {
+  color: 'verde',
   year: 2004,
+
+  setColor(newColor: string): void {
+    this.color = newColor;
+  },
 };
 
+car.setColor('Vermelho');
 console.log(car);
 
 // Funções
@@ -35,3 +36,10 @@ function notUseAny(message: any) {
 console.log(notUseAny([10, '20', 30]));
 console.log(notUseAny(10));
 console.log(notUseAny('20'));
+
+// Void retunr
+function noReturn(...args: string[]): void {
+  console.log(args.join(' '));
+}
+
+console.log(noReturn);
