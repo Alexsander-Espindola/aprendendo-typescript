@@ -2,24 +2,6 @@
 // let name: string = 'Alexsander';
 // ts já iria atribuir a função um tipo string
 
-// Array
-const arrayOfNumbers: Array<number> = [1, 2, 3];
-const otherArrayOfnumbers: number[] = [4, 5, 6, 7];
-console.log(arrayOfNumbers, otherArrayOfnumbers);
-
-// Objetos
-const car = {
-  color: 'verde',
-  year: 2004,
-
-  setColor(newColor: string): void {
-    this.color = newColor;
-  },
-};
-
-car.setColor('Vermelho');
-console.log(car);
-
 // Funções
 function sum(x: number, y: number): number {
   return x + y;
