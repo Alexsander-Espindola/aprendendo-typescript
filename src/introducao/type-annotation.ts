@@ -25,3 +25,13 @@ function sum(x: number, y: number): number {
 }
 const sum2: (x: number, y: number) => number = (x, y) => x + y;
 console.log(sum(10, 20), sum2(10, 25));
+
+// O "any" representa "qualquer tipo" e deve ser evitado
+// pois no TypeScript você quer ser mais específico em tudo
+function notUseAny(message: any) {
+  return message;
+}
+
+console.log(notUseAny([10, '20', 30]));
+console.log(notUseAny(10));
+console.log(notUseAny('20'));
