@@ -1,4 +1,4 @@
-// Redundância de inserção de tipo:
+// Redundância de inferência de tipo:
 // let name: string = 'Alexsander';
 // ts já iria atribuir a função um tipo string
 
