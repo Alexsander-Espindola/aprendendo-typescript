@@ -45,3 +45,29 @@ console.log(returnObject('A'));
 export function funcNever(): never {
   throw new Error('Never Never Never');
 }
+
+// Enum
+enum Colors {
+  RED, // 0
+  YELLOW, // 1
+  GREEN, // 2
+}
+
+console.log(Colors.GREEN);
+
+enum Colors {
+  PINK = 'FFC0CB', // 'FFC0CB'
+  BLACK = 10, // 10
+  WHITE, // 11
+}
+
+console.log(Colors);
+console.log(Colors.PINK);
+console.log(Colors[11]);
+console.log(Colors[9]);
+
+function searchColorRGB(color: Colors): void {
+  console.log(color);
+}
+
+searchColorRGB(Colors.PINK);
