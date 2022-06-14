@@ -25,3 +25,23 @@ function noReturn(...args: string[]): void {
 }
 
 console.log(noReturn);
+
+// Type Annotation para retornos de objetos
+function returnObject(
+  keyA: string,
+  keyB?: string,
+): {
+  keyA: string;
+  keyB?: string;
+} {
+  return {
+    keyA,
+    keyB,
+  };
+}
+
+console.log(returnObject('A'));
+
+export function funcNever(): never {
+  throw new Error('Never Never Never');
+}
