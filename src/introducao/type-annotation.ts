@@ -1,50 +1,15 @@
 // Redundância de inferência de tipo:
-// let name: string = 'Alexsander';
-// ts já iria atribuir a função um tipo string
+// let name: string = 'Alexsander'; ts já iria atribuir a função um tipo string
 
-// Funções
-function sum(x: number, y: number): number {
-  return x + y;
-}
-const sum2: (x: number, y: number) => number = (x, y) => x + y;
-console.log(sum(10, 20), sum2(10, 25));
+// Tipos Literais (Passe o mause por cima dos atributos para ver os tipos que lhe são atribuidos)
+const name = 'Alex';
+// Note que é atribuido 'Alexs' (name: 'Alexs') como o tipo de name, isso é porque name é imutável então o ts lhe atribuiu o tipo subtipo de string 'Alexs'
 
-// O "any" representa "qualquer tipo" e deve ser evitado
-// pois no TypeScript você quer ser mais específico em tudo
-function notUseAny(message: any) {
-  return message;
-}
-
-console.log(notUseAny([10, '20', 30]));
-console.log(notUseAny(10));
-console.log(notUseAny('20'));
-
-// Void retunr
-function noReturn(...args: string[]): void {
-  console.log(args.join(' '));
-}
-
-console.log(noReturn);
-
-// Type Annotation para retornos de objetos
-function returnObject(
-  keyA: string,
-  keyB?: string,
-): {
-  keyA: string;
-  keyB?: string;
-} {
-  return {
-    keyA,
-    keyB,
-  };
-}
-
-console.log(returnObject('A'));
-
-export function funcNever(): never {
-  throw new Error('Never Never Never');
-}
+let name2 = 'Alexs' as const; // É o mesmo que const name = 'Alex';
+const object = {
+  name: 'Alexs' as const,
+  age: '22',
+};
 
 // Enum
 enum Colors {
@@ -71,3 +36,5 @@ function searchColorRGB(color: Colors): void {
 }
 
 searchColorRGB(Colors.PINK);
+
+export default 1;
